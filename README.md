@@ -4,7 +4,7 @@
 
 The synchronous FIFO used in this design is previously verified in the [fifo_uvm](https://github.com/sapphirep/fifo_uvm) project
 
-The UVM testbench for testing UART only (without FIFOs) can be found under the “uart_uvm” branch. UART loopback mode was verified here.
+The UVM testbench for testing UART only (without FIFOs) can be found under the “uart_uvm” branch.
 
 The main branch of the repository contains the RTL design for UART with RX and TX FIFOs along with a UVM testbench for verifying full-duplex and half-duplex modes.
 
@@ -56,7 +56,7 @@ The main branch of the repository contains the RTL design for UART with RX and T
 
 Each`test_top_env` contains a `uart_top_agent` and a `uart_agent`  for interacting with the DUT.
 
-The `uart_agent` is re-used from the single UART loop-back self test. It is configured as a passive agent. It monitors `tx_done` and `rx_done` signals from the `uart_if` .
+The `uart_agent` is re-used from the UART without FIFO UVM testbench with slight modification. It is configured as a passive agent. It monitors `tx_done` and `rx_done` signals from the `uart_if` .
 
 The `uart_top_agent` is an active agent. It interacts with the DUT via `uart_top_if`. Its driver actively drives the DUT upon read/write sequences. The monitor monitors `rd_uart` and `wr_uart` commands.
 
