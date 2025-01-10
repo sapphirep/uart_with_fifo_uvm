@@ -30,7 +30,7 @@ INCDIRS = $(RTL_DIR) \
 SRC_FILES = $(RTL_FILES) \
             $(TB_FILES)
 
-.PHONY: vcs_std vcs_assertion run_test_hd run_test_fd vcs_urg clean
+.PHONY: vcs_std run_test_hd run_test_fd vcs_urg clean
 
 all: vcs_std run_test_hd vcs_urg 
 
